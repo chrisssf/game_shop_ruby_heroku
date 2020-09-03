@@ -1,0 +1,11 @@
+<div class="show">
+  <h1><%= @manufacturer.name %></h1>
+  <p><b>Manufacturer ID:</b> <%= @manufacturer.id %></p>
+  <p><b>Description: </b><%= @manufacturer.description %></p>
+  <p><b>Country: </b><%= @manufacturer.country %></p>
+  <p><b>Deactivated? </b><%= @manufacturer.deactivated.capitalize %></p>
+
+
+  <a href="/manufacturers/<%= @manufacturer.id %>/edit">Edit manufacturer details</a>
+
+</div>

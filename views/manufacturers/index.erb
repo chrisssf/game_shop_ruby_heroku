@@ -1,0 +1,25 @@
+<h1>Here is a list of all active manufacturers</h1>
+
+<table>
+  <tr>
+    <th>Manufacturer ID</th>
+    <th>Manufacturer Name</th>
+    <th>Manufacturer Description</th>
+    <th>Country</th>
+  </tr>
+
+  <% @manufacturers.each do |manufacturer| %>
+    <tr>
+      <td><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.id %></a></td>
+      <td><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></a> </td>
+      <td><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.description %></a></td>
+      <td><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.country %></a></td>
+      <td class="no-border">
+        <form class="" action="/manufacturers/<%= manufacturer.id %>/edit">
+          <input type="submit" value="Edit this Manufacturer">
+        </form>
+      </td>
+    </tr>
+    <% end %>
+</table>
+<a href="/manufacturers/deactivated">Show deactivated Manufacturers</a>

@@ -1,0 +1,26 @@
+<h1>DEACTIVATED Manufacturers</h1>
+<p>To reactivate go to edit manufacturer</p>
+
+<table>
+  <tr>
+    <th>Manufacturer ID</th>
+    <th>Manufacturer Name</th>
+    <th>Manufacturer Description</th>
+    <th>Country</th>
+  </tr>
+
+  <% @deactivated_manufacturers.each do |manufacturer| %>
+    <tr>
+      <td><%= manufacturer.id %></td>
+      <td><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></a> </td>
+      <td><%= manufacturer.description %></td>
+      <td><%= manufacturer.country %></td>
+      <td class="no-border">
+        <form class="" action="/manufacturers/<%= manufacturer.id %>/edit">
+          <input type="submit" value="Edit this Manufacturer">
+        </form>
+      </td>
+    </tr>
+    <% end %>
+</table>
+<a href="/manufacturers">Show activated Manufacturers</a>
